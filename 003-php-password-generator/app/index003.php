@@ -9,6 +9,7 @@ $html =<<<HTML
 <head>
 <meta = charset ="utf-8" />
 <title>Password Generator</title>
+<link rel="stylesheet" href="style003.css">
 </head>
 <body>
 <h1>Password Generator</h1>
