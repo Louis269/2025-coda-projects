@@ -23,6 +23,7 @@ $head=<<<HTML
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
 <title>Competition pierre, feuille, cisaux !</title>
 </head>
 <body>
@@ -33,6 +34,5 @@ $head=<<<HTML
 </body>
 </html>
 HTML;
-
 
 echo $head;
