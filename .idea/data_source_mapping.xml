@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourcePerFileMappings">
-    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/837cf621-38f4-47db-9d97-86c743015c3c/console.sql" value="837cf621-38f4-47db-9d97-86c743015c3c" />
     <file url="file://$PROJECT_DIR$/004-php-lowify/app/install/database_init.php" value="29a4a360-3066-435c-a0cf-13550d2857f0" />
   </component>
 </project>
