@@ -32,10 +32,12 @@ $iterator = 0;
         echo "Erreur lors de la requête";
     }
 $html = <<<HTML
-
+<h1>Album</h1>
 HTML;
 $rawCSS =<<<CSS
-
+h1{
+color: red;
+}
 CSS;
 
 

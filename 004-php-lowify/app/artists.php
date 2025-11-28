@@ -33,13 +33,14 @@ foreach ($allArtists as $artist) {
     }
     $allArtistsAsHTML .= <<<HTML
     <div class="col-lg-3 col-md-6 mb-4">
-        <a href="artists.php?id=$artistId" class="text-decoration-none text-white"></a>
-        <div class="card h-100 bg-dark text-white border-dark shadow">
-            <img src="$artistCover" class="card-img-top rounded-circle" alt="Image 1">
+        <a href="artists.php?id=$artistId" class="text-decoration-none text-white">
+            <div class="card h-100 bg-dark text-white border-dark shadow">
+                <img src="$artistCover" class="card-img-top rounded-circle" alt="Image 1">
                 <div class="card-body bg-secondary-subtle  text-white">
                     <h5>$artistName</h5>
                 </div>
-        </div>
+            </div>
+        </a>
     </div>
     
     HTML;
@@ -49,9 +50,6 @@ foreach ($allArtists as $artist) {
 
     $iterator++;
 }$html = <<<HTML
-    <style>
-        
-    </style>
     
     <div class="container bg-dark text-white p-4">
             <a href="index.php" class="link text-white"> < Retour à l'accueil</a>
@@ -62,12 +60,12 @@ foreach ($allArtists as $artist) {
         {$allArtistsAsHTML}
         </div>
     </div>
-    HTML;
-        $rawCSS = <<<CSS
-    h1{
-    color: red;
-    }
-    CSS;
+HTML;
+$rawCSS = <<<CSS
+div{
+    display: flex;
+}
+CSS;
 
 
 
