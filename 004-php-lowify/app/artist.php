@@ -37,14 +37,10 @@ $html = <<<HTML
 <h1>Album</h1>
 </header>
 HTML;
-$rawCSS =<<<CSS
-h1{
-color: red;
-}
-CSS;
+
 
 
 $page = new HTMLPage("lowify");
 $page ->addContent($html);
-$page ->addContent($rawCSS);
+
 echo $page->render();
