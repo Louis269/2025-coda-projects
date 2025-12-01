@@ -4,9 +4,9 @@ require_once "inc/database.inc.php";
 $db = null;
 try{
     $db = new DatabaseManager(
-        "mysql:host=mysql;dbname=lowify;charset=utf8mb4",
-        $username = "lowify",
-        $password = "lowifypassword",
+            "mysql:host=mysql;dbname=lowify;charset=utf8mb4",
+            $username = "lowify",
+            $password = "lowifypassword",
     );
 } catch (PDOException $ex) {
     echo "Erreur lors du chargement".$ex->getMessage();
@@ -42,7 +42,6 @@ foreach ($allArtists as $artist) {
             </div>
         </a>
     </div>
-    
     HTML;
     if ($iterator % 4 == 3) {
         $allArtistsAsHTML .= '</div>';
@@ -50,26 +49,25 @@ foreach ($allArtists as $artist) {
 
     $iterator++;
 }$html = <<<HTML
-    
+    <link rel="stylesheet" href="style004.css">
+    <header>
     <div class="container bg-dark text-white p-4">
             <a href="index.php" class="link text-white"> < Retour à l'accueil</a>
     
-        <h1 class="mb-4">Artistes</h1>
-        
-        <div>
-        {$allArtistsAsHTML}
-        </div>
+        <h1 class="mb-4"><u>Artistes</u></h1>
     </div>
+    </header>
+    <section>
+    <div>
+        {$allArtistsAsHTML}
+    </div>
+    </section>
 HTML;
-$rawCSS = <<<CSS
-div{
-    display: flex;
-}
-CSS;
+
 
 
 
 $page = new HTMLPage("lowify");
 $page ->addContent($html);
-$page ->addContent($rawCSS);
+
 echo $page->render();

@@ -1,0 +1,19 @@
+
+
+header{
+    background-color: black;
+    padding: 20px;
+    border-radius: 30px;
+}
+h1 {
+    color: white;
+}
+img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 150px;
+
+}
+body{
+    background-color: lightgray;
+}

@@ -32,7 +32,10 @@ $iterator = 0;
         echo "Erreur lors de la requête";
     }
 $html = <<<HTML
+<link rel="stylesheet" href="style004.css">
+<header>
 <h1>Album</h1>
+</header>
 HTML;
 $rawCSS =<<<CSS
 h1{
