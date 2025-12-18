@@ -1,0 +1,31 @@
+{% extends '_layouts/in_app.html.twig' %}
+
+{% block title %}Portefeuille {{ wallet.label }} - Bricount{% endblock %}
+
+{% block content %}
+<h1>{{ wallet.label }}</h1>
+
+    <h4>Montant total : {{ wallet.totalAmount / 100 }}</h4>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Qui</th>
+            <th scope="col">Libellé</th>
+            <th scope="col">Montant</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.createdDate | date('d/m/Y') }}</td>
+                <td>{{ expense.createdBy.name }}</td>
+                <td>{{ expense.description }}</td>
+                <td>{{ expense.amount / 100 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
