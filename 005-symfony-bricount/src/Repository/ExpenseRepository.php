@@ -31,4 +31,12 @@ class ExpenseRepository extends ServiceEntityRepository
                 ->getResult();
 
     }
+
+    public function countExpensesForWallet(Wallet $wallet): int {
+        return
+            $this->count([
+                'wallet' => $wallet,
+                'isDeleted' => false
+            ]);
+    }
 }
