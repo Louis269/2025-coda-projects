@@ -30,7 +30,7 @@ final class ShowController extends AbstractController
 
         // nombre d'éléments par page
         #[MapQueryParameter]
-        int $limit = 25,
+        int $limit = 30,
     ): Response
     {
         // vérifier l'accès de l'utilisateur courant au wallet identifié par l'id
@@ -62,10 +62,18 @@ final class ShowController extends AbstractController
         // récupérer les expenses du wallet
         $expenses = $expenseService->findExpensesForWallet($wallet, $page, $limit);
 
+        // nombre total de dépenses dans le wallet
+        $nbTotalExpenses = $expenseService->countExpensesForWallet($wallet);
+
+        $maxPaginationPage = ceil($nbTotalExpenses / $limit);
+
         // on passe les infos au rendu
         return $this->render('wallets/show/index.html.twig', [
             'wallet' => $wallet,
             'expenses' => $expenses,
+            'maxPaginationPage' => $maxPaginationPage,
+            'limit' => $limit,
+            'page' => $page
         ]);
     }
 }

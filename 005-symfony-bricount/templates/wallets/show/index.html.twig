@@ -27,5 +27,16 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <div>
+        {% for i in 1..maxPaginationPage %}
+        <a
+            class="btn btn-{% if page == i %}outline-{% endif %}primary mr-2"
+            href="{{ path("wallets_show", {"uid": wallet.uid}) }}?page={{ i }}&limit={{ limit }}"
+        >
+            {{ i }}
+        </a>
+        {% endfor %}
+    </div>
 {% endblock %}
 
